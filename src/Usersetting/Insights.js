@@ -1,20 +1,14 @@
 import { View, Text, ScrollView, SafeAreaView, Image, TouchableOpacity, Switch } from 'react-native'
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+
 import React, { useState } from 'react'
-import Checkbox from 'expo-checkbox';
 import { useNavigation } from '@react-navigation/native'
 import Fontfamily from '../../assets/Styles/Fontfamily';
+import { moderateScale, moderateScaleVertical } from '../../assets/Styles/Responsive';
 
 
 const Privacy = () => {
   const navigation = useNavigation()
 
-  const Component=()  =>
-    <View style={{
-        width: scale(30),
-        height: verticalScale(50),
-        padding: moderateScale(5)
-    }}/>;
     // Sliders
     const [isEnabled1, setIsEnabled1] = useState(false);
     const [isEnabled2, setIsEnabled2] = useState(false);
@@ -29,8 +23,8 @@ const Privacy = () => {
   
   return (
     <SafeAreaView style={{backgroundColor:'#242426',height:'100%'}}>
-        <View style={{backgroundColor:'#252526',height:'100%'}}>
-          <View style={{marginTop:moderateScale(35), marginLeft:moderateScale(15),marginRight:moderateScale(15)}}>
+        <View style={{backgroundColor:'#242426',height:'100%'}}>
+          <View style={{marginTop:moderateScaleVertical(35), marginLeft:moderateScale(15),marginRight:moderateScale(15)}}>
           <ScrollView>
             {/* Header */}
           <View>
@@ -38,7 +32,7 @@ const Privacy = () => {
                 <TouchableOpacity onPress={()=>{navigation.goBack()}}>
                 <Image
                 source={{uri:'https://cdn-icons-png.flaticon.com/512/507/507257.png'}}
-                style={{height:moderateScale(20),width:moderateScale(20),tintColor:'#f3f2f2',marginTop:moderateScale(1)}}
+                style={{height:moderateScaleVertical(20),width:moderateScale(20),tintColor:'#f3f2f2',marginTop:moderateScaleVertical(1)}}
                 />
                 </TouchableOpacity>
                 <Text style={{fontSize:18,color:'#f3f2f2',marginLeft:moderateScale(15),fontWeight:'500',fontFamily:Fontfamily.regular}}>Customer Insights</Text>
@@ -46,16 +40,16 @@ const Privacy = () => {
             </View>
             {/* Image */}
             <View>
-              <View style={{alignContent:'center',alignItems:'center',marginTop:moderateScale(150)}}>
+              <View style={{alignContent:'center',alignItems:'center',marginTop:moderateScaleVertical(150)}}>
                 <Image
                 source={require('./Images/Insights.png')}
-                style={{height:moderateScale(290),width:moderateScale(200)}}
+                style={{height:moderateScaleVertical(290),width:moderateScale(200)}}
                 />
               </View>
             </View>
             {/* Text */}
             <View>
-              <View style={{marginTop:moderateScale(25)}}>
+              <View style={{marginTop:moderateScaleVertical(25)}}>
                 <Text style={{color:'#f3f2f2',fontSize:18,textAlign:'center',justifyContent:'center',fontWeight:'500',fontFamily:Fontfamily.regular,lineHeight:20.48}}>You need to be a Group Admin to access Customer Insights</Text>
               </View>
             </View>

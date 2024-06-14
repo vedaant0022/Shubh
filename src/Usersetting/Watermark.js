@@ -1,21 +1,16 @@
 import { View, Text, ScrollView, SafeAreaView, Image, TouchableOpacity, Switch } from 'react-native'
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+
 import React, { useState } from 'react'
 import Checkbox from 'expo-checkbox';
 import { useNavigation } from '@react-navigation/native'
 import LinearGradient from 'react-native-linear-gradient';
 import Fontfamily from '../../assets/Styles/Fontfamily';
+import { moderateScale, moderateScaleVertical } from '../../assets/Styles/Responsive';
 
 
 const Privacy = () => {
   const navigation = useNavigation()
 
-  const Component=()  =>
-    <View style={{
-        width: scale(30),
-        height: verticalScale(50),
-        padding: moderateScale(5)
-    }}/>;
     // Sliders
     const [isEnabled1, setIsEnabled1] = useState(false);
     const [isEnabled2, setIsEnabled2] = useState(false);
@@ -30,8 +25,8 @@ const Privacy = () => {
   
   return (
     <SafeAreaView style={{backgroundColor:'#242426',height:'100%'}}>
-        <View style={{backgroundColor:'#252526',height:'100%'}}>
-          <View style={{marginTop:moderateScale(35), marginLeft:moderateScale(15),marginRight:moderateScale(15)}}>
+        <View style={{backgroundColor:'#242426',height:'100%'}}>
+          <View style={{marginTop:moderateScaleVertical(35), marginLeft:moderateScale(15),marginRight:moderateScale(15)}}>
           <ScrollView>
             {/* Header */}
           <View>
@@ -39,7 +34,7 @@ const Privacy = () => {
                 <TouchableOpacity onPress={()=>{navigation.goBack()}}>
                 <Image
                 source={{uri:'https://cdn-icons-png.flaticon.com/512/507/507257.png'}}
-                style={{height:moderateScale(20),width:moderateScale(20),tintColor:'#f3f2f2',marginTop:moderateScale(4)}}
+                style={{height:moderateScale(20),width:moderateScale(20),tintColor:'#f3f2f2',marginTop:moderateScaleVertical(4)}}
                 />
                 </TouchableOpacity>
                 <Text style={{fontSize:18,color:'#f3f2f2',marginLeft:moderateScale(15),fontWeight:'500'}}>Watermark</Text>
@@ -47,7 +42,7 @@ const Privacy = () => {
             </View>
             {/* Text */}
             <View>
-              <View style={{marginTop:moderateScale(45)}}>
+              <View style={{marginTop:moderateScaleVertical(45)}}>
                 <Text style={{color:'#f3f2f2',fontSize:18,fontWeight:'400',fontFamily:Fontfamily.regular}}>Add a Watermark, or logo of your brand, on all the images you upload.</Text>
               </View>
             </View>
@@ -55,14 +50,14 @@ const Privacy = () => {
             <View style={{marginRight:moderateScale(100)}}>
               <Image
               source={require('./Images/Watermark.png')}
-              style={{height:moderateScale(390),width:moderateScale(300)}}
+              style={{height:moderateScaleVertical(390),width:moderateScale(300)}}
               />
             </View>
             {/* Button */}
             
               <TouchableOpacity style={{alignItems:'center'}}>
-                <View style={{borderWidth:1,width:moderateScale(320),height:moderateScale(50),backgroundColor:'#df6f86',borderColor:'#df6f86',borderRadius:10}}>
-                  <Text style={{textAlign:'center',color:'#f3f2f2',fontSize:18,paddingTop:moderateScale(10),fontWeight:'500'}}>Upload from Gallery</Text>
+                <View style={{borderWidth:1,width:moderateScale(320),height:moderateScaleVertical(50),backgroundColor:'#df6f86',borderColor:'#df6f86',borderRadius:10}}>
+                  <Text style={{textAlign:'center',color:'#f3f2f2',fontSize:18,paddingTop:moderateScaleVertical(10),fontWeight:'500'}}>Upload from Gallery</Text>
                 </View>
               </TouchableOpacity>
             
